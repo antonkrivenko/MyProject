@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork3</title>
+    <style>
+       body {
+        background-color: slategrey;
+       } 
+       li {
+        color: silver;
+        font-size: 20px;
+       }
+       table {
+        position: absolute;
+        left: 300px;
+        top: 35px;
+       }
+       caption {
+        border: solid 2px ;
+        font-size: 20px;
+        padding-left:  100px;
+        padding-right: 100px ;
+       }
+       .formo {
+        border-radius: 5px;
+        border: solid 2px;
+        width: 400px;
+        padding: 10px;
+       }
+       input {
+        width: 200px;
+        border-radius: 15px;
+       }
+       p {
+        margin: 10px;
+       }
+       textarea {
+        border-radius: 15px ;
+       }
+    </style>
+</head>
+
+    <ul>
+        <h2>Рядкові теги:</h2>
+        <li>a; </li>
+        <li>b; </li>
+        <li>br;</li>
+        <li>button;</li>
+        <li>data;</li>
+        <li>small;</li>
+        <li>strong.</li>
+    </ul>
+    <ul>
+        <h2>Блокові теги:</h2>
+        <li>h1-h6;</li>
+        <li>div;</li>
+        <li>main;</li>
+        <li>video;</li>
+        <li>ul;</li>
+        <li>ol;</li>
+        <li>body.</li>
+    </ul>
+    <table border="1">
+    <tr>
+        <caption>Розклад уроків Goiteens</caption>
+        <th>Cубота</th>
+        <th>Неділя</th>
+    </tr> 
+    <tr>
+       <td>тех 10:00 - 11:30</td><br>
+       <td>тех 10:00-11:30</td>
+    </tr>
+    <tr>
+        <td>софт 11:30- 12:30</td>
+    </tr>
+   </table>
+   
+     <div class="formo">
+
+   <form name="signup_form"autocomplete="on">
+    <label for="name">
+        Ведіть прізвище та ім'я:
+        <input type="text"id="name" placeholder="Кривенко Антон">
+    </label>
+    <br>
+    <br>
+      <label for="email">
+        Ведіть електрону пошту:
+        <input type="email"id="email" placeholder="name@gamil.com">
+      </label>
+      <br>
+      <br>
+        <label for="number" >
+            Ведіть номер телефона:
+            <input type="tel"id="tel">
+        </label>
+        </form>
+   </form>
+
+</div>
+ <p>
+    Коментар:
+
+     <br>
+
+    <textarea name="comment" id="comment" cols="40" rows="3"></textarea>
+ </p>
+
+</body>
+</html>

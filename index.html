@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Анімація в праву сторону</title>
+  <style>
+    /* Стилі для посилання */
+    a {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      overflow: hidden; /* Додаємо цю властивість для відсічення зміненої області */
+      position: relative;
+    }
+
+    /* Стилі для анімації при наведенні */
+    a::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: scaleX(0);
+      transform-origin: 0 50%;
+      transition: transform 0.3s ease-in-out;
+      z-index: -1;
+    }
+
+    a:hover::before {
+      transform: scaleX(1);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Анімація в праву сторону при наведенні -->
+  <a href="#">Моя анімація в праву сторону</a>
+
+</body>
+</html>

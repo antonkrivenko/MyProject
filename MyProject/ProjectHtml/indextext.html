@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Текстовий редактор</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+
+        .editor {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            resize: none;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: flex;
+        }
+
+        button {
+            padding: 10px 15px;
+            margin-right: 10px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="editor">
+        <textarea id="editor-area" rows="10" cols="50"></textarea>
+        <div class="buttons">
+            <button id="bold-button"><b>B</b></button>
+            <button id="italic-button"><i>I</i></button>
+            <button id="underline-button"><u>U</u></button>
+            <button id="save-button">Зберегти</button>
+            <label for="file-input" id="open-file-button" style="cursor: pointer;">Відкрити файл</label>
+            <input type="file" id="file-input" accept=".txt" style="display: none;">
+        </div>
+    </div>
+    <script>
+        const editorArea = document.getElementById('editor-area');
+        const boldButton = document.getElementById('bold-button');
+        const italicButton = document.getElementById('italic-button');
+        const underlineButton = document.getElementById('underline-button');
+        const saveButton = document.getElementById('save-button');
+        const openFileButton = document.getElementById('open-file-button');
+        const fileInput = document.getElementById('file-input');
+
+        editorArea.addEventListener('input', updatePreview);
+        boldButton.addEventListener('click', toggleBold);
+        italicButton.addEventListener('click', toggleItalic);
+        underlineButton.addEventListener('click', toggleUnderline);
+        saveButton.addEventListener('click', saveText);
+        openFileButton.addEventListener('click', () => fileInput.click());
+        fileInput.addEventListener('change', loadFile);
+
+        function updatePreview() {
+            // Без блоку "попередній перегляд"
+        }
+
+        function toggleBold() {
+            document.execCommand('bold', false, null);
+            editorArea.focus();
+        }
+
+        function toggleItalic() {
+            document.execCommand('italic', false, null);
+            editorArea.focus();
+        }
+
+        function toggleUnderline() {
+            document.execCommand('underline', false, null);
+            editorArea.focus();
+        }
+
+        function saveText() {
+            const textToSave = editorArea.value;
+            const blob = new Blob([textToSave], { type: 'text/plain' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'text.txt';
+            a.style.display = 'none';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            alert('Текст було успішно збережено в файлі text.txt.');
+        }
+
+        function loadFile() {
+            const selectedFile = fileInput.files[0];
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                const fileContent = event.target.result;
+                editorArea.value = fileContent;
+                updatePreview();
+            };
+            reader.readAsText(selectedFile);
+        }
+    </script>
+</body>
+</html>

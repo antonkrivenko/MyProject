@@ -1,0 +1,90 @@
+h2 {
+    padding-right: 100px;
+    padding-left: 200px;
+    font-family:  sans-serif;
+    display: flex;
+}
+header {
+    display: flex;
+}
+a {
+    text-decoration: none;
+}
+p {
+    font-size: 20px;
+}
+h3 {
+    color: black;
+}
+   
+.content-container {
+    display: flex; 
+}
+
+.section { 
+    margin: 10px; 
+    color: rgb(155, 151, 151);
+    padding-top: 100px;
+    padding-left: 100px ;
+
+}
+.underhead {
+    background-color: rgb(51, 57, 68);
+    height: 450px;
+    padding-top: 200px ;
+    
+}
+h1 {
+    color: white;
+    padding: 10px;
+    font-size: 45px;
+    font-family:  sans-serif;
+    text-transform: uppercase;
+}
+button {
+  margin: -100px;
+  background-color: rgb(32, 99, 207);
+  border:solid rgb(32, 99, 207) ;
+  border-radius: 10px;
+  padding: 20px;
+  color: white;
+  font-size: 22px;
+  width: 250px;
+}
+.web {
+    position: absolute;
+    color: rgb(51, 189, 235);
+    font-size: 25px;
+    top: 3px;
+    left: 150px;
+}
+a {
+    margin: 10px;
+    padding: 10px;
+        }
+nav {
+    position: relative;
+    top: 20px;
+    padding-right: 200px;
+    font-family: sans-serif;
+}
+.contact {
+    padding-right: 100px;
+    color: black;
+}
+.studio {
+    color: rgb(50, 185, 231);
+}
+.portfolio {
+    color: black;
+}
+.mail {
+    color: rgb(50, 185, 231);
+}
+.number {
+    color: gray;
+}
+.picture {
+    position: relative;
+    padding-left: 850px ;
+}
